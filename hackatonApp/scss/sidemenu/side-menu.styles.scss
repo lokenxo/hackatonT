@@ -42,11 +42,22 @@ ion-side-menu
 	ion-item.item:first-child
 	{
 		border-top:none;
+		.icon:before
+		{
+			background-image: url("/img/icons/park2.png");
+			background-repeat: no-repeat;
+		}
 	}
 
 	ion-item.item:last-child
 	{
 		border-bottom:none;
+
+		.icon:before
+		{
+			color:red;
+
+		}
 	}
 
 	.heading-item

@@ -7,10 +7,17 @@ angular.module('your_app_name.controllers', [])
 // APP
 .controller('AppCtrl', function($scope, $ionicConfig) {
 
+	$scope.user={};
+	$scope.user.name="Laura";
+	$scope.user.surname="Rossi";
+	$scope.user.email="laura.rossi@email.it";
+	$scope.user.telephone="3477608470";
+	$scope.user.picture="img/laura.jpg";
+	$scope.user.score="15463";
 })
 
 //LOGIN
-.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
+/*.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
 	$scope.doLogIn = function(){
 		$state.go('app.feeds-categories');
 	};
@@ -27,9 +34,26 @@ angular.module('your_app_name.controllers', [])
 		$scope.selected_tab = data.title;
 	});
 
-})
+})*/
+.controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
+	$scope.doLogIn = function(){
+		$state.go('app.home');
+	};
 
-.controller('SignupCtrl', function($scope, $state) {
+	$scope.user = {};
+
+	$scope.user.email = "tuaemail@dominio.com";
+	$scope.user.pin = "12345";
+
+	// We need this for the form validation
+	$scope.selected_tab = "";
+
+	$scope.$on('my-tabs-changed', function (event, data) {
+		$scope.selected_tab = data.title;
+	});
+
+})
+/*.controller('SignupCtrl', function($scope, $state) {
 	$scope.user = {};
 
 	$scope.user.email = "john@doe.com";
@@ -37,15 +61,34 @@ angular.module('your_app_name.controllers', [])
 	$scope.doSignUp = function(){
 		$state.go('app.feeds-categories');
 	};
+})*/
+.controller('SignupCtrl', function($scope, $state) {
+	$scope.user = {};
+
+	$scope.user.email = "tuaemail@dominio.com";
+
+	$scope.doSignUp = function(){
+		$state.go('app.home');
+	};
 })
 
-.controller('ForgotPasswordCtrl', function($scope, $state) {
+/*.controller('ForgotPasswordCtrl', function($scope, $state) {
 	$scope.recoverPassword = function(){
 		$state.go('app.feeds-categories');
 	};
 
 	$scope.user = {};
+})*/
+
+.controller('ForgotPasswordCtrl', function($scope, $state) {
+	$scope.recoverPassword = function(){
+		//$state.go('app.home');
+		alert("non implementato");
+	};
+
+	$scope.user = {};
 })
+
 
 .controller('RateApp', function($scope) {
 	$scope.rateApp = function(){
@@ -215,6 +258,8 @@ angular.module('your_app_name.controllers', [])
 		$scope.category_sources = category.feed_sources;
 	});
 })
+
+
 
 //this method brings posts for a source provider
 .controller('FeedEntriesCtrl', function($scope, $stateParams, $http, FeedList, $q, $ionicLoading, BookMarkService) {
@@ -460,6 +505,45 @@ angular.module('your_app_name.controllers', [])
 	$scope.shareAll = function() {
 		window.plugins.socialsharing.share(null, null, $scope.images);
 	};
+})
+.controller('BookingCtrl', function($scope, $http) {
+})
+.controller('RanksCtrl', function($scope, $http) {
+})
+.controller('ShopCtrl', function($scope, $http) {
+	console.log("icic");
+})
+.controller('BookingCtrl', function($scope, $http) {
+})
+.controller('AddTicketWithCtrl', function($scope, $http) {
+})
+.controller('AllTicketsCtrl', function($scope, $http) {
+})
+.controller('HomeCtrl', function($scope, $http) {
+
+	$scope.home_categories = [];
+
+	$http.get('home-categories.json').success(function(response) {
+		$scope.home_categories = response;
+	});
+	console.log("HOME");
+})
+.controller('CategoryCtrl', function($scope, $http, $stateParams) {
+	$scope.category_sources = [];
+
+	$scope.categoryId = $stateParams.categoryId;
+
+	$http.get('home-categories.json').success(function(response) {
+		var category = _.find(response, {id: $scope.categoryId});
+		$scope.categoryTitle = category.title;
+		$scope.category_sources = category.home_sources;
+	});
+})
+.controller('HomeEntriesCtrl', function($scope, $stateParams, $http, $q, $ionicLoading) {
+	$scope.home = [];
+
+	var categoryId = $stateParams.categoryId,
+			sourceId = $stateParams.sourceId;
 })
 
 ;

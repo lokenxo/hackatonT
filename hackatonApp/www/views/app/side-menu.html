@@ -3,10 +3,7 @@
     <ion-nav-bar class="bar app-top-bar">
       <ion-nav-back-button>
       </ion-nav-back-button>
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
+       
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -14,26 +11,38 @@
   <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
     <ion-content>
       <ion-list>
-        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profile">
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="#">
           <div class="user-image-container">
             <pre-img ratio="_1_1" helper-class="rounded-image">
-              <img class="user-image" ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" spinner-on-load>
+              <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
           	</pre-img>
           </div>
-          <h2 class="greeting">Hi Brynn</h2>
-          <p class="message">Welcome back</p>
+          <h2 class="greeting">Ciao {{user.name}}.</h2>
+          <p class="message">Bentornata!</p>
         </ion-item>
-        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.bookmarks">
+        <ion-item class="item-icon-left" menu-close ui-sref="app.allTickets">
+          <i class="icon ion-pricetags"></i>
+          <h2 class="menu-text">Tutti i biglietti</h2>
+        </ion-item>
+        <ion-item class="item-icon-left"  menu-close ui-sref="app.settings">
+          <i class="icon ion-gear-a"></i>
+          <h2 class="menu-text">Impostazioni</h2>
+        </ion-item>
+        <ion-item class="item-icon-left"  menu-close ui-sref="#">
+          <i class="icon ion-power"></i>
+          <h2 class="menu-text">Logout</h2>
+        </ion-item>
+       <!-- <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.bookmarks">
           <i class="icon ion-bookmark"></i>
-          <h2 class="menu-text">Saved for later</h2>
+          <h2 class="menu-text">Tutti i biglietti!</h2>
         </ion-item>
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.feeds-categories">
           <i class="icon ion-radio-waves"></i>
-          <h2 class="menu-text">Feeds</h2>
+          <h2 class="menu-text">Impostazioni</h2>
         </ion-item>
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.wordpress">
           <i class="icon ion-social-wordpress"></i>
-          <h2 class="menu-text">Wordpress</h2>
+          <h2 class="menu-text">Logout</h2>
         </ion-item>
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.layouts">
           <i class="icon ion-wand"></i>
@@ -50,7 +59,7 @@
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.settings">
           <i class="icon ion-gear-a"></i>
           <h2 class="menu-text">Settings</h2>
-        </ion-item>
+        </ion-item>-->
 
     </ion-list>
     </ion-content>

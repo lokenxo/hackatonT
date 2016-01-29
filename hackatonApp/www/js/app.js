@@ -238,15 +238,6 @@ angular.module('your_app_name', [
   })
 
   //OTHERS
-  .state('app.settings', {
-    url: "/settings",
-    views: {
-      'menuContent': {
-        templateUrl: "views/app/settings.html",
-        controller: 'SettingsCtrl'
-      }
-    }
-  })
 
   .state('app.forms', {
     url: "/forms",
@@ -276,6 +267,81 @@ angular.module('your_app_name', [
     }
   })
 
+  .state('app.allTickets', {
+    url: "/allTickets",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/allTickets.html",
+        controller: 'AllTicketsCtrl'
+      }
+    }
+  })
+
+  .state('app.settings', {
+    url: "/settings",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/settings.html",
+        controller: 'SettingsCtrl'
+      }
+    }
+  })
+
+  .state('app.booking', {
+    url: "/booking",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/booking.html",
+        controller: 'BookingCtrl'
+      }
+    }
+  })
+  .state('app.addTicketWithPhoto', {
+    url: "/addTicketWithPhoto",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/addTicketWithPhoto.html",
+        controller: 'AddTicketWithPhotoCtrl'
+      }
+    }
+  })
+  .state('app.shop', {
+    url: "/shop",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/shop.html",
+        controller: 'ShopCtrl'
+      }
+    }
+  })
+  .state('app.ranks', {
+    url: "/ranks",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/ranks.html",
+        controller: 'RanksCtrl'
+      }
+    }
+  })
+   .state('app.home', {
+    url: "/home",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/home.html",
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+
+.state('app.category', {
+    url: "/category/:categoryId",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/category.html",
+        controller: 'CategoryCtrl'
+      }
+    }
+  })
 ;
 
   // if none of the above states are matched, use this as the fallback

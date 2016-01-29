@@ -1,0 +1,22 @@
+[
+	{
+		"id":"booking",
+		"title":"Prenota",
+		"image":"img/feeds/news.jpg"
+	},
+	{
+		"id":"addticketwithphoto",
+		"title":"Aggiungi un biglietto",
+		"image":"img/feeds/sports.jpg"
+	},
+	{
+		"id":"shop",
+		"title":"Spendi i crediti",
+		"image":"img/feeds/business.jpg"
+	},
+	{
+		"id":"ranks",
+		"title":"Classifica",
+		"image":"img/feeds/entertainment.jpg"
+	}
+]
