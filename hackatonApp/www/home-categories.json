@@ -2,7 +2,7 @@
 	{
 		"id":"booking",
 		"title":"Prenota",
-		"image":"img/feeds/news.jpg",
+		"image":"img/Cart.png",
 		"home_sources":[
 			{
 				"id":"Trenitalia",
@@ -38,7 +38,7 @@
 	{
 		"id":"shop",
 		"title":"Spendi i crediti",
-		"image":"img/Cart.png",
+		"image":"img/Present.png",
 		"home_sources":[
 			{
 				"id":"McDonald",
