@@ -13,7 +13,7 @@ angular.module('your_app_name.controllers', [])
 	$scope.user.email="laura.rossi@email.it";
 	$scope.user.telephone="3477608470";
 	$scope.user.picture="img/laura.jpg";
-	$scope.user.score="15463";
+	$scope.user.score="2450";
 	$scope.takePicture = function(){   
         var cameraOptions = {
             quality: 50,
@@ -564,6 +564,7 @@ angular.module('your_app_name.controllers', [])
 	{
 		case "addticketwithphoto":
 		{
+			$scope.categoryTitle = "Aggiungi Un Biglietto";
 			break;
 		}
 		case "booking":

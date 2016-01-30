@@ -38,12 +38,12 @@
 	},
 	{
 		"id":"addticketwithphoto",
-		"title":"Aggiungi un biglietto",
+		"title":"Aggiungi Un Biglietto",
 		"image":"img/Camera.png"
 	},
 	{
 		"id":"shop",
-		"title":"Spendi i crediti",
+		"title":"Spendi I Crediti",
 		"image":"img/Present.png",
 		"home_sources":[
 			{

@@ -3,26 +3,24 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-nav-title>
-    <span>Home</span>
+    <span></span>
   </ion-nav-title>
   <ion-content>
   <div class="list card">
 
-  <div class="item item-thumbnail-left" style="background-image: url('img/ScoreBkg.png'); height:120px;">
-    <img src="img/IconaGrandeHomepage.png">
-    <h2>Punti {{user.score}}</h2>
-    <p>dkdkdk</p>
+  <div class="item item-thumbnail-left" style="background-image: url('img/ScoreBkg.png'); height:160px; background-size:100%;">
+    <img src="img/IconaGrandeHomepage.png" style="top:20px; width: 40%; height: 85%; max-width: 10000px; max-height: 10000px;" >
+    <h1 style="color:#FFFFFF; padding-left: 40px; font-size:35px; text-shadow: 2px 2px #000000; text-shadow:2px 2px 0px rgba(0,0,0, 0.7);">Travel Coin </h1>
+    <h1 style="color:#FFFFFF; padding-left: 65px; font-family: 'Ocra'; font-weigth: bold; font-size:60px; text-shadow:2px 2px 0px rgba(0,0,0, 0.7);">{{user.score}}</h1>
   </div>
 </div>
     <div class="row categories-list">
 
       <div ng-repeat="category in home_categories" class="col col-50">
         <a class="home-category" ui-sref="app.category({categoryId: (category.id | slugify)})">
-                      <div class="category-bg"></div>
-
+          <div class="category-bg"></div>
           <pre-img ratio="_1_1" helper-class="square-image">
             <img class="category-image" ng-src="{{category.image}}" spinner-on-load>
-        
           </pre-img>
           <span class="category-title">{{category.title}}</span>
         </a>
