@@ -14,6 +14,9 @@ angular.module('your_app_name.controllers', [])
 	$scope.user.telephone="3477608470";
 	$scope.user.picture="img/laura.jpg";
 	$scope.user.score="15463";
+
+	
+
 })
 
 //LOGIN
@@ -475,7 +478,7 @@ angular.module('your_app_name.controllers', [])
 
 .controller('ImagePickerCtrl', function($scope, $rootScope, $cordovaCamera) {
 
-	$scope.images = [];
+	/*$scope.images = [];
 
 	$scope.selImages = function() {
 
@@ -504,7 +507,7 @@ angular.module('your_app_name.controllers', [])
 
 	$scope.shareAll = function() {
 		window.plugins.socialsharing.share(null, null, $scope.images);
-	};
+	};*/
 })
 .controller('BookingCtrl', function($scope, $http) {
 })
@@ -515,7 +518,9 @@ angular.module('your_app_name.controllers', [])
 })
 .controller('BookingCtrl', function($scope, $http) {
 })
-.controller('AddTicketWithCtrl', function($scope, $http) {
+.controller('AddTicketWithPhotoCtrl', function($scope, $http) {
+	console.log("OSOSSOS");
+	
 })
 .controller('AllTicketsCtrl', function($scope, $http) {
 })
@@ -528,22 +533,40 @@ angular.module('your_app_name.controllers', [])
 	});
 	console.log("HOME");
 })
+
 .controller('CategoryCtrl', function($scope, $http, $stateParams) {
 	$scope.category_sources = [];
 
 	$scope.categoryId = $stateParams.categoryId;
+	console.log($scope.categoryId);
 
-	$http.get('home-categories.json').success(function(response) {
-		var category = _.find(response, {id: $scope.categoryId});
-		$scope.categoryTitle = category.title;
-		$scope.category_sources = category.home_sources;
-	});
+	switch($scope.categoryId)
+	{
+		case "addticketwithphoto":
+		{
+			console.log("ciao");
+			takePicture();
+			break;
+		}
+		case "booking":
+		{
+			$http.get('home-categories.json').success(function(response) {
+			var category = _.find(response, {id: $scope.categoryId});
+			$scope.categoryTitle = category.title;
+			$scope.category_sources = category.home_sources;
+			});
+			break;
+		}
+	}
+	
+	
 })
-.controller('HomeEntriesCtrl', function($scope, $stateParams, $http, $q, $ionicLoading) {
-	$scope.home = [];
 
-	var categoryId = $stateParams.categoryId,
-			sourceId = $stateParams.sourceId;
+.controller('CategoryEntriesCtrl', function($scope, $stateParams, $http) {
+	$scope.category_sources = [];
+	$scope.sourceId = $stateParams.sourceId;
+	$scope.entriesTitle = $stateParams.sourceId;
+	console.log("ciao");
 })
 
 ;

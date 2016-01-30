@@ -1,5 +1,19 @@
 // Ionic Starter App
 
+function takePicture()
+  {
+    console.log("PSOO");
+    navigator.camera.getPicture(function(imageURI) {
+
+      // imageURI is the URL of the image that we can use for
+      // an <img> element or backgroundImage.
+
+    }, function(err) {
+
+      // Ruh-roh, something bad happened
+
+    }, cameraOptions);
+  }
 angular.module('underscore', [])
 .factory('_', function() {
   return window._; // assumes underscore has already been loaded on the page
@@ -26,6 +40,8 @@ angular.module('your_app_name', [
   'ionic.contrib.ui.tinderCards',
   'youtube-embed'
 ])
+
+
 
 .run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout) {
 
@@ -296,8 +312,8 @@ angular.module('your_app_name', [
       }
     }
   })
-  .state('app.addTicketWithPhoto', {
-    url: "/addTicketWithPhoto",
+  .state('app.addticketwithphoto', {
+    url: "/addticketwithphoto",
     views: {
       'menuContent': {
         templateUrl: "views/app/addTicketWithPhoto.html",
@@ -334,11 +350,20 @@ angular.module('your_app_name', [
   })
 
 .state('app.category', {
-    url: "/category/:categoryId",
+    url: "/:categoryId",
     views: {
       'menuContent': {
         templateUrl: "views/app/category.html",
         controller: 'CategoryCtrl'
+      }
+    }
+  })
+ .state('app.category-entries', {
+    url: "/booking/:sourceId",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/category-entries.html",
+        controller: 'CategoryEntriesCtrl'
       }
     }
   })

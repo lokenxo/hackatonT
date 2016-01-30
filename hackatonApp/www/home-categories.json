@@ -2,7 +2,38 @@
 	{
 		"id":"booking",
 		"title":"Prenota",
-		"image":"img/feeds/news.jpg"
+		"image":"img/feeds/news.jpg",
+		"home_sources":[
+			{
+				"id":"Trenitalia",
+				"title":"Trenitalia",
+				"description":"The latest stories from the World section of the BBC News web site.",
+				"image":"img/trenitalialogo.png",
+				"url":"http://feeds.bbci.co.uk/news/world/rss.xml"
+				
+			},
+			{
+				"id":"Trenitalia",
+				"title":"Trenitalia",
+				"description":"Reuters.com is your source for breaking news, business, financial and investing news, including personal finance and stocks. Reuters is the leading global provider of news, financial information and technology solutions to the world's media, financial institutions, businesses and individuals.",
+				"image":"img/trenitalialogo.png",
+				"url":"http://feeds.reuters.com/Reuters/worldNews"
+			},
+			{
+				"id":"Trenitalia",
+				"title":"Trenitalia",
+				"description":"CNN.com delivers up-to-the-minute news and information on the latest top stories, weather, entertainment, politics and more.",
+				"image":"img/trenitalialogo.png",
+				"url":"http://rss.cnn.com/rss/cnn_world.rss"
+			},
+			{
+				"id":"Trenitalia",
+				"title":"Trenitalia",
+				"description":"Latest World news, comment and analysis from the Guardian, the world's leading liberal voice",
+				"image":"img/trenitalialogo.png",
+				"url":"http://www.theguardian.com/world/rss"
+			}
+		]
 	},
 	{
 		"id":"addticketwithphoto",
