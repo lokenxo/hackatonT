@@ -5,28 +5,34 @@
 		"image":"img/Cart.png",
 		"home_sources":[
 			{
-				"id":"Trenitalia",
-				"title":"Trenitalia",
+				"id":"Azienda Trasporti Area Fiorentina",
+				"title":"Azienda Trasporti Area Fiorentina",
 				"description":"",
-				"image":"img/trenitalialogo.png"
+				"image":"img/compagnie/ataf.png"
+			},
+			{
+				"id":"Azienda Trasporti Livornese",
+				"title":"Azienda Trasporti Livornese",
+				"description":"",
+				"image":"img/compagnie/atl.png"
+			},
+			{
+				"id":"Consorzio Pisano Trasporti",
+				"title":"Consorzio Pisano Trasporti",
+				"description":"",
+				"image":"img/compagnie/cpt.png"
 			},
 			{
 				"id":"Trenitalia",
 				"title":"Trenitalia",
 				"description":"",
-				"image":"img/trenitalialogo.png"
+				"image":"img/compagnie/trenitalia.png"
 			},
 			{
-				"id":"Trenitalia",
-				"title":"Trenitalia",
+				"id":"Train Siena",
+				"title":"Train Siena",
 				"description":"",
-				"image":"img/trenitalialogo.png"
-			},
-			{
-				"id":"Trenitalia",
-				"title":"Trenitalia",
-				"description":"",
-				"image":"img/trenitalialogo.png"
+				"image":"img/compagnie/train.png"
 			}
 		]
 	},
@@ -70,6 +76,6 @@
 	{
 		"id":"settings",
 		"title":"Impostazioni",
-		"image":"img/feeds/entertainment.jpg"
+		"image":"img/Settings.png"
 	}
 ]
