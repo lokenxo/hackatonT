@@ -544,7 +544,6 @@ angular.module('your_app_name.controllers', [])
 	{
 		case "addticketwithphoto":
 		{
-			console.log("ciao");
 			takePicture();
 			break;
 		}
@@ -555,6 +554,21 @@ angular.module('your_app_name.controllers', [])
 			$scope.categoryTitle = category.title;
 			$scope.category_sources = category.home_sources;
 			});
+			break;
+		}
+		case "shop":
+		{
+			$http.get('home-categories.json').success(function(response) {
+			var category = _.find(response, {id: $scope.categoryId});
+			$scope.categoryTitle = category.title;
+			$scope.category_sources = category.home_sources;
+			});
+			break;
+		}
+		case "settings":
+		{
+			$scope.categoryTitle = "Impostazioni";
+			console.log("odod");
 			break;
 		}
 	}
