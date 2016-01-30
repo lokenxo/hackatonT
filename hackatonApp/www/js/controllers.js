@@ -14,6 +14,26 @@ angular.module('your_app_name.controllers', [])
 	$scope.user.telephone="3477608470";
 	$scope.user.picture="img/laura.jpg";
 	$scope.user.score="15463";
+	$scope.takePicture = function(){   
+        var cameraOptions = {
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL                
+         };
+        var success = function(data){
+        $scope.$apply(function () {
+             /*
+               remember to set the image ng-src in $apply,
+               i tried to set it from outside and it doesn't work.
+             */
+               $scope.cameraPic = "data:image/jpeg;base64," + data;
+             });
+         };
+        var failure = function(message){
+             alert('Failed because: ' + message);
+        };
+        //call the cordova camera plugin to open the device's camera
+        navigator.camera.getPicture( success , failure , cameraOptions );            
+    };
 
 	
 
@@ -544,7 +564,6 @@ angular.module('your_app_name.controllers', [])
 	{
 		case "addticketwithphoto":
 		{
-			takePicture();
 			break;
 		}
 		case "booking":

@@ -4,7 +4,7 @@
   </ion-nav-title>
   <ion-content>
 
-    <input type="text" placeholder="Search" ng-hide="categoryId=='settings'">
+    <input type="text" placeholder="Search" ng-hide="categoryId=='settings'" ng-hide="categoryId=='addticketwithphoto'">
          
 
    <div class="list category-homes">
@@ -23,6 +23,16 @@
 
       </a>
     </div>
+
+    <div class="form-group padding-top" ng-show="categoryId=='addticketwithphoto'">                   
+          <button class='button button-positive' data-ng-click="takePicture()">
+            {{text.buttonTitle}}
+          </button> 
+      </div>
+
+    <div class="item item-image" ng-show="categoryId=='addticketwithphoto'">
+          <img ng-src="{{cameraPic}}"/>
+    </div>     
 
     <ul class="list" ng-show="categoryId=='settings'">
 
