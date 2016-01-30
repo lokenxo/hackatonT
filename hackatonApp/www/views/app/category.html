@@ -34,45 +34,26 @@
           <img ng-src="{{cameraPic}}"/>
     </div>     
 
-    <ul class="list" ng-show="categoryId=='settings'">
+    
 
-      <div class="item item-divider">TOGGLE</div>
-
-      <ion-toggle ng-model="airplaneMode" toggle-class="toggle-assertive">Airplane Mode</ion-toggle>
-      <ion-toggle ng-model="wifi" toggle-class="toggle-positive">Wi-Fi</ion-toggle>
-      <ion-toggle ng-model="bluetooth" toggle-class="toggle-calm">Bluetooth</ion-toggle>
-      <ion-toggle ng-model="personalHotspot" toggle-class="toggle-dark">Personal Hotspot</ion-toggle>
-
-      <div class="item item-divider">CHECKBOXES</div>
-
-      <ion-checkbox ng-model="checkOpt1">Option 1</ion-checkbox>
-      <ion-checkbox ng-model="checkOpt2">Option 2</ion-checkbox>
-      <ion-checkbox ng-model="checkOpt3">Option 3</ion-checkbox>
-
-      <div class="item item-divider">RADIO</div>
-
-      <ion-radio ng-model="radioChoice" ng-value="'A'">Choose A</ion-radio>
-      <ion-radio ng-model="radioChoice" ng-value="'B'">Choose B</ion-radio>
-      <ion-radio ng-model="radioChoice" ng-value="'C'">Choose C</ion-radio>
-
-      <div class="item item-divider">RANGES</div>
-
-      <div class="range">
-        <i class="icon ion-volume-low"></i>
-        <input type="range" name="volume">
-        <i class="icon ion-volume-high"></i>
+    <div class="top-content row" ng-show="categoryId=='settings'">
+      <div class="profile-container">
+        <div class="user-image-container">
+          <pre-img ratio="_1_1" helper-class="rounded-image">
+            <img class="user-image" ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" spinner-on-load>
+          </pre-img>
+        </div>
+        <div class="user-name">Brynn Evans</div>
+        <div class="user-twitter">@brynn</div>
       </div>
-      <div class="item range range-positive">
-        <i class="icon ion-ios-sunny-outline"></i>
-        <input type="range" name="volume" min="0" max="100" value="33">
-        <i class="icon ion-ios-sunny"></i>
+      <div class="user-background-image-outer">
+        <div multi-bg="['https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg']"></div>
       </div>
-
-      <div class="item item-divider"></div>
-
-      <button class="button button-block button-assertive" ng-click="showLogOutMenu()">
-        Logout
-      </button>
-    </ul>
+    </div>
+    <div class="bottom-content">
+      <div class="user-bio">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
