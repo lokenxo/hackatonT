@@ -5,7 +5,7 @@ angular.module('your_app_name.controllers', [])
 })
 
 // APP
-.controller('AppCtrl', function($scope, $ionicConfig) {
+.controller('AppCtrl', function($scope, $ionicConfig, $ionicLoading, $state, $rootScope) {
 
 	$scope.user={};
 	$scope.user.name="Laura";
@@ -13,28 +13,60 @@ angular.module('your_app_name.controllers', [])
 	$scope.user.email="laura.rossi@email.it";
 	$scope.user.telephone="3477608470";
 	$scope.user.picture="img/laura.jpg";
-	$scope.user.score="2450";
-	$scope.takePicture = function(){   
-        var cameraOptions = {
+	$scope.user.score=2450;
+	$rootScope.fine=false;
+function startTimer(duration, $scope, $state) {
+	            $rootScope.fine=false;
+
+    var timer = duration, minutes, seconds;
+    var a = setInterval(function ($scope, $state) {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        console.log(seconds);
+		 $ionicLoading.show({
+		      template: '<p>Verifico il biglietto...</p><ion-spinner></ion-spinner>'
+		    });        
+ 		if (--timer < 0) {
+            timer = duration;
+            console.log("diidi");
+            clearInterval(a);
+            $ionicLoading.hide();
+            $rootScope.fine=true;
+
+
+        }
+    }, 1000);
+}
+
+	$scope.takePicture = function($scope, $state){   
+      /*  var cameraOptions = {
             quality: 50,
             destinationType: Camera.DestinationType.DATA_URL                
          };
         var success = function(data){
         $scope.$apply(function () {
-             /*
-               remember to set the image ng-src in $apply,
-               i tried to set it from outside and it doesn't work.
-             */
+        
                $scope.cameraPic = "data:image/jpeg;base64," + data;
+
              });
          };
         var failure = function(message){
              alert('Failed because: ' + message);
         };
         //call the cordova camera plugin to open the device's camera
-        navigator.camera.getPicture( success , failure , cameraOptions );            
+        navigator.camera.getPicture( success , failure , cameraOptions );   */  
+         var fiveMinutes = 3;
+
+    	startTimer(fiveMinutes, $scope, $state);
     };
 
+
+ 
+          
 	
 
 })
@@ -557,9 +589,9 @@ angular.module('your_app_name.controllers', [])
 	console.log("HOME");
 })
 
-.controller('CategoryCtrl', function($scope, $http, $stateParams) {
+.controller('CategoryCtrl', function($scope, $http, $stateParams, $state, $rootScope, $location) {
 	$scope.category_sources = [];
-
+	$rootScope.fine=false;
 	$scope.categoryId = $stateParams.categoryId;
 	console.log($scope.categoryId);
 	$scope.modifica=false;
@@ -567,7 +599,19 @@ angular.module('your_app_name.controllers', [])
 	{
 		$scope.modifica=!$scope.modifica;
 		
-	}
+	};
+	$scope.clickFine = function()
+	{
+		$rootScope.fine=false;
+		$location.url('/app/home');
+		$scope.user.score+=100;
+
+	};
+	$scope.compra= function()
+	{
+		alert("comprato");
+	};
+
 	switch($scope.categoryId)
 	{
 		case "addticketwithphoto":

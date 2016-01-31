@@ -1,4 +1,4 @@
-<ion-view class="" ng-hide="categoryId==settings'">
+<ion-view class="" ng-hide="categoryId=='settings'">
   <ion-nav-title>
     <span>{{categoryTitle}}</span>
   </ion-nav-title>
@@ -7,7 +7,7 @@
     <input type="text" placeholder="Search" ng-hide="categoryId=='settings' || categoryId=='addticketwithphoto'">
          
 
-   <div class="list category-homes">
+   <div ng-hide="categoryId=='shop'" class="list category-homes">
       <a ng-repeat="source in category_sources" class="item item-icon-right" ui-sref="app.category-entries({categoryId: categoryId, sourceId: (source.title)})">
         <div class="thumbnail-outer" style="height:80px;">
           <pre-img ratio="_1_1" helper-class="">
@@ -18,8 +18,24 @@
           <span class="title">{{source.title}}</span>
           <p class="description">{{source.description}}</p>
         </div>
-        <i ng-hide="categoryId=='shop'" class="icon ion-arrow-right-c"></i>
-        <i ng-show="categoryId=='shop'" class="icon ion-bag"></i>
+        <i  class="icon ion-arrow-right-c"></i>
+
+      </a>
+    </div>
+
+   <div ng-show="categoryId=='shop'" class="list category-homes">
+      <a ng-repeat="source in category_sources" class="item item-icon-right" ng-click="compra();">
+        <div class="thumbnail-outer" style="height:80px;">
+          <pre-img ratio="_1_1" helper-class="">
+            <img class="" ng-src="{{source.image}}" spinner-on-load>
+          </pre-img>
+        </div>
+        <div>
+          <span class="title">{{source.title}}</span>
+          <p class="description">{{source.description}}</p>
+        </div>
+                <i class="icon ion-bag">{{source.price}}</i>
+
 
       </a>
     </div>
@@ -32,6 +48,9 @@
 
     <div class="item item-image" ng-show="categoryId=='addticketwithphoto'">
           <img ng-src="{{cameraPic}}"/>
+          <h5 style="
+    font-size: 0px;">{{fine}}</h5>
+          <a class="button button-icon icon ion-thumbsup" ng-show="fine==true" ng-click="clickFine()"></a>
     </div>     
 
 
@@ -56,23 +75,23 @@
       <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">Nome</span>
-          <input type="text" placeholder="Nome" value="Laura" ng-disabled="modifica">
+          <input type="text" placeholder="Nome" value="Laura" ng-disabled="!modifica">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Cognome</span>
-          <input type="text" placeholder="Cognome" value="Rossi" ng-disabled="modifica">
+          <input type="text" placeholder="Cognome" value="Rossi" ng-disabled="!modifica">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="email" placeholder="Email" value="laura.rossi@email.it" ng-disabled="modifica">
+          <input type="email" placeholder="Email" value="laura.rossi@email.it" ng-disabled="!modifica">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Cellulare</span>
-          <input type="text" placeholder="Cellulare" value="3477608470" ng-disabled="modifica">
+          <input type="text" placeholder="Cellulare" value="3477608470" ng-disabled="!modifica">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="Password" value="passworddifficilissima" ng-disabled="modifica">
+          <input type="password" placeholder="Password" value="passworddifficilissima" ng-disabled="!modifica">
         </label>
          <button  class="button button-positive-right" style="float:right; border:0;" ng-click="cambiaModifica();">
             <i ng-show='!modifica' class="icon ion-edit"></i>
@@ -82,6 +101,3 @@
     </div>
   </ion-content>
 </ion-view>
-
-
-gfgr
