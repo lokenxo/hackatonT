@@ -1,4 +1,4 @@
-<ion-view class="">
+<ion-view class="" ng-hide="categoryId==settings'">
   <ion-nav-title>
     <span>{{categoryTitle}}</span>
   </ion-nav-title>
@@ -34,26 +34,54 @@
           <img ng-src="{{cameraPic}}"/>
     </div>     
 
-    
 
-    <div class="top-content row" ng-show="categoryId=='settings'">
+  </ion-content>
+</ion-view>
+<ion-view class="profile-view" ng-show="categoryId=='settings'">
+  <ion-content>
+    <div class="top-content row">
       <div class="profile-container">
         <div class="user-image-container">
           <pre-img ratio="_1_1" helper-class="rounded-image">
-            <img class="user-image" ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" spinner-on-load>
+            <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
           </pre-img>
         </div>
-        <div class="user-name">Brynn Evans</div>
-        <div class="user-twitter">@brynn</div>
+        <div class="user-name">{{user.name}} {{user.surname}}</div>
       </div>
       <div class="user-background-image-outer">
-        <div multi-bg="['https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg']"></div>
+        <div multi-bg="['img/sfondoSettings.png']"></div>
       </div>
     </div>
     <div class="bottom-content">
-      <div class="user-bio">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Nome</span>
+          <input type="text" placeholder="Nome" value="Laura" ng-disabled="modifica">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Cognome</span>
+          <input type="text" placeholder="Cognome" value="Rossi" ng-disabled="modifica">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="Email" value="laura.rossi@email.it" ng-disabled="modifica">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Cellulare</span>
+          <input type="text" placeholder="Cellulare" value="3477608470" ng-disabled="modifica">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Password" value="passworddifficilissima" ng-disabled="modifica">
+        </label>
+         <button  class="button button-positive-right" style="float:right; border:0;" ng-click="cambiaModifica();">
+            <i ng-show='!modifica' class="icon ion-edit"></i>
+            <i ng-show='modifica' class="icon ion-checkmark-round">Salva </i>
+          </button>
       </div>
     </div>
   </ion-content>
 </ion-view>
+
+
+gfgr

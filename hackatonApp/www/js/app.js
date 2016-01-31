@@ -269,12 +269,22 @@ angular.module('your_app_name', [
     }
   })
 
-  .state('app.allTickets', {
-    url: "/allTickets",
+  .state('app.alltickets', {
+    url: "/alltickets",
     views: {
       'menuContent': {
         templateUrl: "views/app/allTickets.html",
-        controller: 'AllTicketsCtrl'
+        controller: 'CategoryCtrl'
+      }
+    }
+  })
+
+  .state('app.allshop', {
+    url: "/allshop",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/allTickets.html",
+        controller: 'CategoryCtrl'
       }
     }
   })

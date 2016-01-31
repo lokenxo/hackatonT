@@ -544,6 +544,9 @@ angular.module('your_app_name.controllers', [])
 })
 .controller('AllTicketsCtrl', function($scope, $http) {
 })
+
+.controller('AllShopCtrl', function($scope, $http) {
+})
 .controller('HomeCtrl', function($scope, $http) {
 
 	$scope.home_categories = [];
@@ -559,7 +562,12 @@ angular.module('your_app_name.controllers', [])
 
 	$scope.categoryId = $stateParams.categoryId;
 	console.log($scope.categoryId);
-
+	$scope.modifica=false;
+	$scope.cambiaModifica = function()
+	{
+		$scope.modifica=!$scope.modifica;
+		
+	}
 	switch($scope.categoryId)
 	{
 		case "addticketwithphoto":
@@ -589,6 +597,16 @@ angular.module('your_app_name.controllers', [])
 		{
 			$scope.categoryTitle = "Impostazioni";
 			console.log("odod");
+			break;
+		}
+		case "alltickets":
+		{
+			$scope.categoryTitle = "Tutti I Biglietti";
+			break;
+		}
+		case "allshop":
+		{
+			$scope.categoryTitle = "Tutti Gli Acquisti";
 			break;
 		}
 	}

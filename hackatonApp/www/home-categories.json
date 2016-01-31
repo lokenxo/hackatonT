@@ -47,29 +47,41 @@
 		"image":"img/Present.png",
 		"home_sources":[
 			{
-				"id":"McDonald",
-				"title":"McDonald",
-				"description":"Sconto di 2 euro sul BigMac.",
-				"image":"img/mcdonaldlogo.png"
+				"id":"Emozione3",
+				"title":"Pacchetto Emozione3",
+				"description":"20% di sconto sul cofanetto regalo Avventura",
+				"image":"img/promozioni/emozione.png"
 				
 			},
 			{
-				"id":"McDonald",
-				"title":"McDonald",
-				"description":"Reuters.com is your source for breaking news, business, financial and investing news, including personal finance and stocks. Reuters is the leading global provider of news, financial information and technology solutions to the world's media, financial institutions, businesses and individuals.",
-				"image":"img/mcdonaldlogo.png"
+				"id":"Chagall",
+				"title":"Mostra di Chagall",
+				"description":"Biglietto scontato del 10%",
+				"image":"img/promozioni/chagall.png"
 			},
 			{
-				"id":"McDonald",
-				"title":"McDonald",
-				"description":"CNN.com delivers up-to-the-minute news and information on the latest top stories, weather, entertainment, politics and more.",
-				"image":"img/mcdonaldlogo.png"
+				"id":"Fiorentina",
+				"title":"Fiorentina Calcio",
+				"description":"Vieni a vedere la Viola allo stadio! Il biglietto ti costa solo 10€ e ti offriamo la birra",
+				"image":"img/promozioni/fiorentina.png"
 			},
 			{
-				"id":"McDonald",
-				"title":"McDonald",
-				"description":"Latest World news, comment and analysis from the Guardian, the world's leading liberal voice",
-				"image":"img/mcdonaldlogo.png"
+				"id":"NaturaSi",
+				"title":"NaturaSi",
+				"description":"3 confezioni di ragù Alce Nero per te!",
+				"image":"img/promozioni/naturasi.png"
+			},
+			{
+				"id":"Comisc",
+				"title":"Lucca Comics And Games",
+				"description":"Sconto del 15% sul prezzo del biglietto",
+				"image":"img/promozioni/comics.png"
+			},
+			{
+				"id":"Trenitalia",
+				"title":"Trenitalia",
+				"description":"Biglietto per tratta regionale - 15% di sconto!",
+				"image":"img/promozioni/trenitalia.png"
 			}
 		]
 	},
@@ -77,5 +89,15 @@
 		"id":"settings",
 		"title":"Impostazioni",
 		"image":"img/Settings.png"
+	},
+	{
+		"id":"allTickets",
+		"title":"Tutti I Biglietti",
+		"image":""
+	},
+	{
+		"id":"allShop",
+		"title":"Tutti Gli Acquisti",
+		"image":""
 	}
 ]
