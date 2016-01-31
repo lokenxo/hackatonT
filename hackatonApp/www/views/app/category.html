@@ -24,7 +24,7 @@
     </div>
 
    <div ng-show="categoryId=='shop'" class="list category-homes">
-      <a ng-repeat="source in category_sources" class="item item-icon-right" ng-click="compra();">
+      <a ng-repeat="source in category_sources" class="item item-icon-right" ng-click="compra({{source.price}});">
         <div class="thumbnail-outer" style="height:80px;">
           <pre-img ratio="_1_1" helper-class="">
             <img class="" ng-src="{{source.image}}" spinner-on-load>

@@ -51,7 +51,7 @@
 				"title":"Pacchetto Emozione3",
 				"description":"20% di sconto sul cofanetto regalo Avventura",
 				"image":"img/promozioni/emozione.png",
-				"price":"400"
+				"price":400
 				
 			},
 			{
@@ -59,35 +59,35 @@
 				"title":"Mostra di Chagall",
 				"description":"Biglietto scontato del 10%",
 				"image":"img/promozioni/chagall.png",
-				"price":"100"
+				"price":100
 			},
 			{
 				"id":"Fiorentina",
 				"title":"Fiorentina Calcio",
 				"description":"Vieni a vedere la Viola allo stadio! Il biglietto ti costa solo 10€ e ti offriamo la birra",
 				"image":"img/promozioni/fiorentina.png",
-				"price":"1700"
+				"price":1700
 			},
 			{
 				"id":"NaturaSi",
 				"title":"NaturaSi",
 				"description":"3 confezioni di ragù Alce Nero per te!",
 				"image":"img/promozioni/naturasi.png",
-				"price":"2000"
+				"price":2000
 			},
 			{
 				"id":"Comisc",
 				"title":"Lucca Comics And Games",
 				"description":"Sconto del 15% sul prezzo del biglietto",
 				"image":"img/promozioni/comics.png",
-				"price":"1000"
+				"price":1000
 			},
 			{
 				"id":"Trenitalia",
 				"title":"Trenitalia",
 				"description":"Biglietto per tratta regionale - 15% di sconto!",
 				"image":"img/promozioni/trenitalia.png",
-				"price":"1500"
+				"price":1500
 			}
 		]
 	},

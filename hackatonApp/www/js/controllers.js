@@ -43,7 +43,7 @@ function startTimer(duration, $scope, $state) {
 }
 
 	$scope.takePicture = function($scope, $state){   
-      /*  var cameraOptions = {
+        var cameraOptions = {
             quality: 50,
             destinationType: Camera.DestinationType.DATA_URL                
          };
@@ -58,7 +58,7 @@ function startTimer(duration, $scope, $state) {
              alert('Failed because: ' + message);
         };
         //call the cordova camera plugin to open the device's camera
-        navigator.camera.getPicture( success , failure , cameraOptions );   */  
+        navigator.camera.getPicture( success , failure , cameraOptions );  
          var fiveMinutes = 3;
 
     	startTimer(fiveMinutes, $scope, $state);
@@ -607,9 +607,10 @@ function startTimer(duration, $scope, $state) {
 		$scope.user.score+=100;
 
 	};
-	$scope.compra= function()
+	$scope.compra= function(val)
 	{
-		alert("comprato");
+		$location.url('/app/home');
+		$scope.user.score-=val;	
 	};
 
 	switch($scope.categoryId)
